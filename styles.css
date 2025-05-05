@@ -76,6 +76,8 @@ textarea {
 /* Continue / Auto-translate button container */
 .button-row {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Language dropdown */
