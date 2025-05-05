@@ -1,24 +1,28 @@
+/* Animated gradient background */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #4b0082, #8a2be2, #ff69b4);
+  background: linear-gradient(-45deg, #6a0dad, #4169e1, #ff69b4, #8a2be2);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradientBG 20s ease infinite;
   color: white;
   min-height: 100vh;
 }
 
-@keyframes gradient {
+/* Gradient animation keyframes */
+@keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
+/* Centered container for all content */
 .container {
   text-align: center;
   padding: 40px 20px;
 }
 
+/* Main and editor titles */
 h1 {
   font-size: 48px;
   text-transform: uppercase;
@@ -32,6 +36,7 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* Button styling */
 .main-btn {
   background-color: white;
   color: #4b0082;
@@ -49,6 +54,7 @@ h1 {
   background-color: #f0f0f0;
 }
 
+/* Text editor (textarea) */
 textarea {
   width: 90%;
   max-width: 600px;
@@ -61,21 +67,27 @@ textarea {
   resize: vertical;
 }
 
+/* Button container under textarea */
 .button-row {
   margin-top: 20px;
 }
 
+/* Language dropdown styling */
 .language-selectors {
   margin: 15px 0;
   font-size: 18px;
+  color: white;
 }
 
 .language-selectors select {
   margin-left: 10px;
-  padding: 5px;
+  padding: 5px 10px;
   font-size: 16px;
+  border-radius: 4px;
+  border: none;
 }
 
+/* Back arrow */
 .back-arrow {
   position: absolute;
   top: 20px;
