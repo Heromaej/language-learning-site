@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <!-- Main title section -->
-        <h1>Learn Languages</h1>
+        <h1 id="mainTitle">Learn Languages</h1>
 
         <!-- Buttons for "MAKE YOUR OWN" and "UPLOAD" -->
         <div class="button-row">
@@ -28,7 +28,7 @@
             <textarea id="wordEditor" placeholder="Type one word per line. Use '-' to separate translations."></textarea>
         </div>
 
-        <!-- Continue button row (centered) -->
+        <!-- Continue button row (centered and at the bottom) -->
         <div class="button-row">
             <button class="main-btn">CONTINUE</button>
         </div>
@@ -39,12 +39,16 @@
         function showEditor() {
             document.querySelector(".container").style.display = "none";
             document.getElementById("editorSection").style.display = "block";
+            document.getElementById("mainTitle").innerText = "Write"; // Change the title to "Write"
+            document.getElementById("mainTitle").classList.add("shrink-up"); // Add animation class
         }
 
         // Function to go back to the main page
         function goBack() {
             document.querySelector(".container").style.display = "flex";
             document.getElementById("editorSection").style.display = "none";
+            document.getElementById("mainTitle").innerText = "Learn Languages"; // Revert to original title
+            document.getElementById("mainTitle").classList.remove("shrink-up"); // Remove animation class
         }
     </script>
 </body>
