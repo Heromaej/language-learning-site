@@ -9,43 +9,49 @@ body {
   min-height: 100vh;
 }
 
-/* Gradient animation keyframes */
+/* Gradient animation */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Centered container for all content */
+/* Main container (centers content) */
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
-/* Main and editor titles */
+/* Title */
 h1 {
-  font-size: 48px;
+  font-size: 72px;
   text-transform: uppercase;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   transition: all 0.3s ease;
 }
 
+/* Editor title (separate styling for positioning) */
 #editorTitle {
-  font-size: 60px;
-  margin-bottom: 10px;
+  font-size: 64px;
+  margin-bottom: 20px;
 }
 
-/* Button styling */
+/* Buttons */
 .main-btn {
   background-color: white;
   color: #4b0082;
   border: none;
-  padding: 12px 24px;
-  margin: 10px;
-  font-size: 18px;
+  padding: 16px 32px;
+  margin: 15px;
+  font-size: 24px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -54,7 +60,7 @@ h1 {
   background-color: #f0f0f0;
 }
 
-/* Text editor (textarea) */
+/* Text area (editor) */
 textarea {
   width: 90%;
   max-width: 600px;
@@ -67,12 +73,12 @@ textarea {
   resize: vertical;
 }
 
-/* Button container under textarea */
+/* Continue / Auto-translate button container */
 .button-row {
   margin-top: 20px;
 }
 
-/* Language dropdown styling */
+/* Language dropdown */
 .language-selectors {
   margin: 15px 0;
   font-size: 18px;
