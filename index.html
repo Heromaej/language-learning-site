@@ -8,32 +8,19 @@
 </head>
 <body>
   <button id="backArrow" class="back-arrow hidden">←</button>
+  
   <div class="hero">
     <h1 id="mainTitle">LEARN LANGUAGES</h1>
 
     <div class="buttons" id="mainButtons">
-      <button id="writeBtn">WRITE</button> <!-- Changed from "MAKE YOUR OWN" to "WRITE" -->
+      <button id="writeBtn">WRITE</button>
       <button id="upload">UPLOAD</button>
-    </div>
-
-    <!-- Language selector (hidden until Write is clicked) -->
-    <div class="language-selector hidden" id="languageSelector">
-      <label for="language">LANGUAGE: </label>
-      <select id="language">
-        <option value="German">German</option>
-        <option value="English">English</option>
-        <option value="Slovak">Slovak</option>
-        <option value="Czech">Czech</option>
-        <option value="Italian">Italian</option>
-        <option value="Spanish">Spanish</option>
-      </select>
     </div>
 
     <div class="editor-section hidden" id="editorSection">
       <textarea id="wordEditor" placeholder="Type one word per line...&#10;Example: dog - der Hund"></textarea>
       <div class="editor-buttons">
         <button id="continueBtn">CONTINUE</button>
-        <button id="autoTranslateBtn">AUTO-TRANSLATE</button>
       </div>
     </div>
   </div>
