@@ -36,13 +36,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
-/* Editor title (separate styling for positioning) */
-#editorTitle {
-  font-size: 64px;
-  margin-bottom: 20px;
-}
-
-/* Buttons */
+/* Button styling (centered) */
 .main-btn {
   background-color: white;
   color: #4b0082;
@@ -73,26 +67,11 @@ textarea {
   resize: vertical;
 }
 
-/* Continue / Auto-translate button container */
+/* Continue button row (centered) */
 .button-row {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-}
-
-/* Language dropdown */
-.language-selectors {
-  margin: 15px 0;
-  font-size: 18px;
-  color: white;
-}
-
-.language-selectors select {
-  margin-left: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
 }
 
 /* Back arrow */
