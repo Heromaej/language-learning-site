@@ -1,101 +1,132 @@
-/* Animated gradient background */
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg, #6a0dad, #4169e1, #8a2be2);
-  background-size: 400% 400%;
-  animation: gradientBG 20s ease infinite;
-  color: white;
-  min-height: 100vh;
+  padding: 0;
 }
 
-/* Gradient animation */
-@keyframes gradientBG {
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #6a0dad, #2196f3, #ff69b4);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.title-move-up {
+  margin-bottom: 20px;
+  transform: translateY(-60px);
+  font-size: 2.5rem;
+}
+
+.title-bigger {
+  font-size: 4rem;  /* Larger font size when clicked */
+  margin-top: 20px;  /* Slightly move the title down */
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
+}
+
+.buttons button,
+.editor-buttons button {
+  background: white;
+  color: #6a0dad;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons button:hover,
+.editor-buttons button:hover {
+  background-color: #e0d4f7;
+}
+
+.editor-section {
+  width: 90%;
+  max-width: 600px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: none;
+  margin-top: 20px;
+}
+
+.language-selector {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.language-selector label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.language-selector select {
+  background-color: white;
+  color: #6a0dad;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Main container (centers content) */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Title */
-h1 {
-  font-size: 72px;
-  text-transform: uppercase;
-  color: white;
-  margin-bottom: 40px;
-  transition: all 0.3s ease;
-}
-
-/* Animation for title shrinking and moving up */
-.shrink-up {
-  font-size: 48px;  /* Smaller size */
-  margin-bottom: 20px;
-  transform: translateY(-50px); /* Move upwards */
-}
-
-/* Button styling (centered) */
-.main-btn {
-  background-color: white;
-  color: #4b0082;
-  border: none;
-  padding: 16px 32px;
-  margin: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.main-btn:hover {
-  background-color: #f0f0f0;
-}
-
-/* Text editor section */
-.editor-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;  /* Space between the editor and continue button */
-}
-
-/* Text area (editor) */
-textarea {
-  width: 90%;
-  max-width: 600px;
-  height: 250px;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  resize: vertical;
-}
-
-/* Continue button row (centered and spaced at the bottom) */
-.button-row {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 50px;  /* Position the button near the bottom */
-}
-
-/* Back arrow styling (larger and more visible) */
 .back-arrow {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 36px; /* Increased size */
-  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
   color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.2s ease;
+}
+
+.back-arrow:hover {
+  opacity: 0.7;
 }
