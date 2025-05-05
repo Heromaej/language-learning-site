@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Languages</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Languages</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Main title section -->
-        <h1 id="mainTitle">Learn Languages</h1>
+  <button id="backArrow" class="back-arrow hidden">←</button>
+  <div class="hero">
+    <h1 id="mainTitle">LEARN LANGUAGES</h1>
 
-        <!-- Buttons for "MAKE YOUR OWN" and "UPLOAD" -->
-        <div class="button-row">
-            <button class="main-btn" id="makeYourOwnBtn" onclick="showEditor()">WRITE</button>
-            <button class="main-btn" id="uploadBtn">UPLOAD</button>
-        </div>
+    <div class="buttons" id="mainButtons">
+      <button id="writeBtn">WRITE</button> <!-- Changed from "MAKE YOUR OWN" to "WRITE" -->
+      <button id="upload">UPLOAD</button>
     </div>
 
-    <!-- Text editor section, hidden initially -->
-    <div id="editorSection" style="display: none;">
-        <!-- Back arrow (made bigger) -->
-        <div class="back-arrow" onclick="goBack()">←</div>
-
-        <!-- Centered text editor -->
-        <div class="editor-container">
-            <textarea id="wordEditor" placeholder="Type one word per line. Use '-' to separate translations."></textarea>
-        </div>
-
-        <!-- Continue button row (centered and at the bottom) -->
-        <div class="button-row">
-            <button class="main-btn">CONTINUE</button>
-        </div>
+    <!-- Language selector (hidden until Write is clicked) -->
+    <div class="language-selector hidden" id="languageSelector">
+      <label for="language">LANGUAGE: </label>
+      <select id="language">
+        <option value="German">German</option>
+        <option value="English">English</option>
+        <option value="Slovak">Slovak</option>
+        <option value="Czech">Czech</option>
+        <option value="Italian">Italian</option>
+        <option value="Spanish">Spanish</option>
+      </select>
     </div>
 
-    <script>
-        // Function to show the editor section and hide the main page
-        function showEditor() {
-            document.querySelector(".container").style.display = "none";
-            document.getElementById("editorSection").style.display = "block";
-            document.getElementById("mainTitle").innerText = "Write"; // Change the title to "Write"
-            document.getElementById("mainTitle").classList.add("shrink-up"); // Add animation class
-        }
+    <div class="editor-section hidden" id="editorSection">
+      <textarea id="wordEditor" placeholder="Type one word per line...&#10;Example: dog - der Hund"></textarea>
+      <div class="editor-buttons">
+        <button id="continueBtn">CONTINUE</button>
+        <button id="autoTranslateBtn">AUTO-TRANSLATE</button>
+      </div>
+    </div>
+  </div>
 
-        // Function to go back to the main page
-        function goBack() {
-            document.querySelector(".container").style.display = "flex";
-            document.getElementById("editorSection").style.display = "none";
-            document.getElementById("mainTitle").innerText = "Learn Languages"; // Revert to original title
-            document.getElementById("mainTitle").classList.remove("shrink-up"); // Remove animation class
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
