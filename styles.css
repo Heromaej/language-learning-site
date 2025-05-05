@@ -11,7 +11,7 @@ body, html {
 
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #6a0dad, #2196f3, #ff69b4);
+  background: linear-gradient(135deg, #6a0dad, #2196f3, #87ceeb);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   display: flex;
@@ -32,15 +32,8 @@ h1 {
 }
 
 .title-move-up {
-  margin-bottom: 20px;
   transform: translateY(-60px);
-  font-size: 2.5rem;
-}
-
-.title-bigger {
-  font-size: 4rem;  /* Larger font size when clicked */
-  margin-top: 20px;  /* Slightly move the title down */
-  transition: font-size 0.3s ease, margin-top 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .buttons button,
@@ -82,28 +75,6 @@ textarea {
   margin-top: 20px;
 }
 
-.language-selector {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: white;
-}
-
-.language-selector label {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.language-selector select {
-  background-color: white;
-  color: #6a0dad;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 200px;
-}
-
 .hidden {
   display: none;
 }
@@ -120,7 +91,7 @@ textarea {
   left: 20px;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: white;
   cursor: pointer;
   z-index: 1000;
