@@ -20,9 +20,15 @@
 
     <!-- Text editor section, hidden initially -->
     <div id="editorSection" style="display: none;">
+        <!-- Back arrow (made bigger) -->
         <div class="back-arrow" onclick="goBack()">←</div>
-        <textarea id="wordEditor" placeholder="Type one word per line. Use '-' to separate translations."></textarea>
 
+        <!-- Centered text editor -->
+        <div class="editor-container">
+            <textarea id="wordEditor" placeholder="Type one word per line. Use '-' to separate translations."></textarea>
+        </div>
+
+        <!-- Continue button row (centered) -->
         <div class="button-row">
             <button class="main-btn">CONTINUE</button>
         </div>
