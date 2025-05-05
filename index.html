@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Languages</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <!-- Title -->
+    <h1 id="mainTitle">LEARN LANGUAGES</h1>
+
+    <!-- Buttons -->
+    <div id="mainButtons">
+      <button class="styled-btn" id="writeBtn">WRITE</button>
+      <button class="styled-btn" id="uploadBtn">UPLOAD</button>
+    </div>
+
+    <!-- Back Button -->
+    <div id="backArrow" class="hidden" title="Back">&#8592;</div>
+
+    <!-- Editor Section -->
+    <div id="editorSection" class="hidden">
+      <h1 id="editorTitle">WRITE</h1>
+
+      <div id="languageSelector">
+        <label for="sourceLang">From:</label>
+        <select id="sourceLang">
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="sk">Slovak</option>
+          <option value="cs">Czech</option>
+          <option value="it">Italian</option>
+          <option value="es">Spanish</option>
+        </select>
+
+        <label for="targetLang">To:</label>
+        <select id="targetLang">
+          <option value="de">German</option>
+          <option value="en">English</option>
+          <option value="sk">Slovak</option>
+          <option value="cs">Czech</option>
+          <option value="it">Italian</option>
+          <option value="es">Spanish</option>
+        </select>
+      </div>
+
+      <textarea id="wordEditor" placeholder="Type one word per line..."></textarea>
+
+      <div class="button-container">
+        <button class="styled-btn" id="continueBtn">CONTINUE</button>
+        <button class="styled-btn" id="autoTranslateBtn">AUTO-TRANSLATE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
