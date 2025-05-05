@@ -54,12 +54,18 @@ h1 {
   background-color: #f0f0f0;
 }
 
+/* Text editor section */
+.editor-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 /* Text area (editor) */
 textarea {
   width: 90%;
   max-width: 600px;
   height: 250px;
-  margin-top: 20px;
   padding: 15px;
   font-size: 16px;
   border: none;
@@ -74,12 +80,12 @@ textarea {
   justify-content: center;
 }
 
-/* Back arrow */
+/* Back arrow styling (larger and more visible) */
 .back-arrow {
   position: absolute;
   top: 20px;
   left: 20px;
-  font-size: 24px;
+  font-size: 36px; /* Increased size */
   cursor: pointer;
   color: white;
 }
