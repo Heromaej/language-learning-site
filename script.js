@@ -1,32 +1,22 @@
-const writeBtn = document.getElementById('writeBtn');
-const uploadBtn = document.getElementById('uploadBtn');
-const mainButtons = document.getElementById('mainButtons');
 const mainTitle = document.getElementById('mainTitle');
+const initialButtons = document.getElementById('initialButtons');
 const editorSection = document.getElementById('editorSection');
-const backArrow = document.getElementById('backArrow');
-const editorTitle = document.getElementById('editorTitle');
 const autoTranslateBtn = document.getElementById('autoTranslateBtn');
-const continueBtn = document.getElementById('continueBtn');
 
-writeBtn.addEventListener('click', () => {
-  mainButtons.classList.add('hidden');
+function showEditor() {
+  mainTitle.style.fontSize = '60px';
   mainTitle.textContent = 'WRITE';
-  mainTitle.style.fontSize = '3.5em';
-  mainTitle.style.marginBottom = '20px';
-  editorSection.classList.remove('hidden');
-  backArrow.classList.remove('hidden');
-});
+  initialButtons.style.display = 'none';
+  editorSection.style.display = 'block';
+}
 
-backArrow.addEventListener('click', () => {
-  mainButtons.classList.remove('hidden');
+function goBack() {
+  mainTitle.style.fontSize = '48px';
   mainTitle.textContent = 'LEARN LANGUAGES';
-  mainTitle.style.fontSize = '3em';
-  mainTitle.style.marginBottom = '40px';
-  editorSection.classList.add('hidden');
-  backArrow.classList.add('hidden');
-});
+  initialButtons.style.display = 'block';
+  editorSection.style.display = 'none';
+}
 
-// AUTO-TRANSLATE button functionality
 autoTranslateBtn.addEventListener('click', async () => {
   const textArea = document.getElementById('wordEditor');
   const sourceLang = document.getElementById('sourceLang').value;
@@ -40,19 +30,21 @@ autoTranslateBtn.addEventListener('click', async () => {
       updatedLines.push(line);
     } else {
       try {
-        const response = await fetch('https://www.apertium.org/apy/translate', {
+        const response = await fetch('https://libretranslate.de/translate', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
           },
-          body: new URLSearchParams({
-            langpair: `${sourceLang}|${targetLang}`,
-            q: line.trim()
+          body: JSON.stringify({
+            q: line.trim(),
+            source: sourceLang,
+            target: targetLang,
+            format: "text"
           })
         });
 
         const data = await response.json();
-        const translated = data.responseData.translatedText;
+        const translated = data.translatedText;
         updatedLines.push(`${line.trim()} - ${translated}`);
       } catch (error) {
         console.error('Translation failed:', error);
