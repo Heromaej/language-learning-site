@@ -1,71 +1,52 @@
 const writeBtn = document.getElementById("writeBtn");
 const uploadBtn = document.getElementById("uploadBtn");
-const backArrow = document.getElementById("backArrow");
-const mainTitle = document.getElementById("mainTitle");
 const mainButtons = document.getElementById("mainButtons");
-
-const writeSection = document.getElementById("writeSection");
+const mainTitle = document.getElementById("mainTitle");
+const editorSection = document.getElementById("editorSection");
 const uploadSection = document.getElementById("uploadSection");
+const backArrow = document.getElementById("backArrow");
 
-const writeEditor = document.getElementById("writeEditor");
-const uploadEditor = document.getElementById("uploadEditor");
-
-const writeContinueBtn = document.getElementById("writeContinueBtn");
-const uploadContinueBtn = document.getElementById("uploadContinueBtn");
-
-const fileInput = document.getElementById("fileInput");
-
-// Show Write UI
+// WRITE button
 writeBtn.addEventListener("click", () => {
-  mainTitle.textContent = "Write";
+  mainTitle.textContent = "WRITE";
+  mainTitle.classList.remove("title-upload");
   mainTitle.classList.add("title-move-up");
+
   mainButtons.style.display = "none";
-  writeSection.classList.remove("hidden");
+  editorSection.classList.remove("hidden");
+  uploadSection.classList.add("hidden");
   backArrow.classList.remove("hidden");
 });
 
-// Show Upload UI
+// UPLOAD button
 uploadBtn.addEventListener("click", () => {
-  mainTitle.textContent = "Upload";
-  mainTitle.classList.add("title-move-up");
+  mainTitle.textContent = "UPLOAD";
+  mainTitle.classList.remove("title-move-up");
+  mainTitle.classList.add("title-upload");
+
   mainButtons.style.display = "none";
+  editorSection.classList.add("hidden");
   uploadSection.classList.remove("hidden");
   backArrow.classList.remove("hidden");
 });
 
-// Back arrow resets everything
+// BACK ARROW
 backArrow.addEventListener("click", () => {
   mainTitle.textContent = "LEARN LANGUAGES";
-  mainTitle.classList.remove("title-move-up");
+  mainTitle.classList.remove("title-move-up", "title-upload");
 
-  writeSection.classList.add("hidden");
+  editorSection.classList.add("hidden");
   uploadSection.classList.add("hidden");
 
   mainButtons.style.display = "flex";
   backArrow.classList.add("hidden");
-
-  writeEditor.value = "";
-  uploadEditor.value = "";
-  fileInput.value = "";
 });
 
-// Handle file input
-fileInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    uploadEditor.value = e.target.result;
-  };
-  reader.readAsText(file);
+// CONTINUE buttons (placeholder for now)
+document.getElementById("continueBtn").addEventListener("click", () => {
+  alert("Continue from WRITE");
 });
 
-// CONTINUE Buttons (placeholder actions)
-writeContinueBtn.addEventListener("click", () => {
-  alert("You clicked CONTINUE from Write section!");
-});
-
-uploadContinueBtn.addEventListener("click", () => {
-  alert("You clicked CONTINUE from Upload section!");
+document.getElementById("continueBtnUpload").addEventListener("click", () => {
+  alert("Continue from UPLOAD");
 });
