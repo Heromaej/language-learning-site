@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,9 +10,10 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
+/* Background & Main Container */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #6a0dad, #2196f3, #87ceeb);
+  background: linear-gradient(135deg, #6a0dad, #2196f3, #ff69b4);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   display: flex;
@@ -22,6 +24,14 @@ body, html {
   color: white;
 }
 
+/* Animated Background */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Title */
 h1 {
   font-size: 3rem;
   letter-spacing: 2px;
@@ -32,10 +42,12 @@ h1 {
 }
 
 .title-move-up {
-  transform: translateY(-60px);
   margin-bottom: 20px;
+  transform: translateY(-80px);
+  font-size: 2.4rem;
 }
 
+/* Buttons (General) */
 .buttons button,
 .editor-buttons button {
   background: white;
@@ -43,11 +55,12 @@ h1 {
   border: none;
   padding: 15px 30px;
   margin: 10px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .buttons button:hover,
@@ -55,15 +68,17 @@ h1 {
   background-color: #e0d4f7;
 }
 
+/* Centered Editor Section */
 .editor-section {
   width: 90%;
   max-width: 600px;
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Textarea */
 textarea {
   width: 100%;
   height: 300px;
@@ -75,23 +90,44 @@ textarea {
   margin-top: 20px;
 }
 
-.hidden {
-  display: none;
+/* File Input - Styled */
+input[type="file"] {
+  appearance: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+input[type="file"]::file-selector-button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
+input[type="file"]:hover {
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  transform: scale(1.05);
+}
+
+/* Back Arrow */
 .back-arrow {
   position: absolute;
   top: 20px;
   left: 20px;
   background: none;
   border: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
   z-index: 1000;
@@ -102,14 +138,7 @@ textarea {
   opacity: 0.7;
 }
 
-input[type="file"] {
-  margin-top: 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  padding: 10px;
-  background-color: white;
-  color: #6a0dad;
-  cursor: pointer;
+/* Hide elements when needed */
+.hidden {
+  display: none;
 }
-
