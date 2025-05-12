@@ -121,6 +121,11 @@ input[type="file"] {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+
+input[type="file"]:focus {
+  outline: none;  /* Remove focus outline */
+}
+
 /* Apply uniform styling to the file input button */
 input[type="file"]::file-selector-button {
   background: none; /* No background */
