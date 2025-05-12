@@ -109,11 +109,9 @@ input[type="file"] {
   appearance: none;
   background: white;
   color: #6a0dad;
-  border: 2px solid #6a0dad;  /* Purple border */
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -123,7 +121,6 @@ input[type="file"] {
 
 input[type="file"]::file-selector-button {
   background: white;
-  border: 2px solid #6a0dad; /* Purple border */
   color: #6a0dad;
   font-weight: bold;
   padding: 10px 20px;
