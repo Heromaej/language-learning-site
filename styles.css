@@ -1,4 +1,4 @@
-/* Global Reset */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +10,7 @@ body, html {
   font-family: 'Arial', sans-serif;
 }
 
-/* Background & Main Container */
+/* Background */
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #6a0dad, #2196f3, #ff69b4);
@@ -24,7 +24,7 @@ body, html {
   color: white;
 }
 
-/* Animated Background */
+/* Animated Gradient */
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -47,7 +47,13 @@ h1 {
   font-size: 2.4rem;
 }
 
-/* Buttons (General) */
+.title-upload {
+  transform: translateY(-30px);
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
 .buttons button,
 .editor-buttons button {
   background: white;
@@ -68,7 +74,7 @@ h1 {
   background-color: #e0d4f7;
 }
 
-/* Centered Editor Section */
+/* Editor Section */
 .editor-section {
   width: 90%;
   max-width: 600px;
@@ -78,7 +84,6 @@ h1 {
   align-items: center;
 }
 
-/* Textarea */
 textarea {
   width: 100%;
   height: 300px;
@@ -90,7 +95,7 @@ textarea {
   margin-top: 20px;
 }
 
-/* File Input - Styled */
+/* File Input */
 input[type="file"] {
   appearance: none;
   background: linear-gradient(to right, #8e2de2, #4a00e0);
@@ -138,15 +143,7 @@ input[type="file"]:hover {
   opacity: 0.7;
 }
 
-/* Hide elements when needed */
+/* Hidden Elements */
 .hidden {
   display: none;
 }
-
-/* Title specifically for Upload screen */
-.title-upload {
-  transform: translateY(-30px);
-  font-size: 2.6rem;
-  margin-bottom: 30px;
-}
-
