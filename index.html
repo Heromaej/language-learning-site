@@ -8,19 +8,29 @@
 </head>
 <body>
   <button id="backArrow" class="back-arrow hidden">←</button>
-  
+
   <div class="hero">
     <h1 id="mainTitle">LEARN LANGUAGES</h1>
 
     <div class="buttons" id="mainButtons">
       <button id="writeBtn">WRITE</button>
-      <button id="upload">UPLOAD</button>
+      <button id="uploadBtn">UPLOAD</button>
     </div>
 
-    <div class="editor-section hidden" id="editorSection">
-      <textarea id="wordEditor" placeholder="Type one word per line...&#10;Example: dog - der Hund"></textarea>
+    <!-- Write Section -->
+    <div class="editor-section hidden" id="writeSection">
+      <textarea id="writeEditor" placeholder="Type one word per line...&#10;Example: dog - der Hund"></textarea>
       <div class="editor-buttons">
-        <button id="continueBtn">CONTINUE</button>
+        <button id="writeContinueBtn">CONTINUE</button>
+      </div>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="editor-section hidden" id="uploadSection">
+      <input type="file" id="fileInput" accept=".txt" />
+      <textarea id="uploadEditor" placeholder="Your uploaded words will appear here..."></textarea>
+      <div class="editor-buttons">
+        <button id="uploadContinueBtn">CONTINUE</button>
       </div>
     </div>
   </div>
