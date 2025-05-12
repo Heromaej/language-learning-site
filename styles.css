@@ -104,12 +104,12 @@ textarea {
   opacity: 0.7;
 }
 
-/* File Input - Styled to match purple buttons */
+/* File Input - Styled to match other buttons (purple text, white background) */
 input[type="file"] {
   appearance: none;
-  background: #6a0dad;
-  color: white;
-  border: none;
+  background: white;
+  color: #6a0dad;
+  border: 2px solid #6a0dad;  /* Purple border */
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
@@ -122,9 +122,9 @@ input[type="file"] {
 }
 
 input[type="file"]::file-selector-button {
-  background: #6a0dad;
-  border: none;
-  color: white;
+  background: white;
+  border: 2px solid #6a0dad; /* Purple border */
+  color: #6a0dad;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 8px;
@@ -133,5 +133,5 @@ input[type="file"]::file-selector-button {
 }
 
 input[type="file"]::file-selector-button:hover {
-  background-color: #8b4dda;
+  background-color: #f3e5f5;  /* Light purple background when hovered */
 }
