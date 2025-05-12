@@ -142,3 +142,11 @@ input[type="file"]:hover {
 .hidden {
   display: none;
 }
+
+/* Title specifically for Upload screen */
+.title-upload {
+  transform: translateY(-30px);
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+
