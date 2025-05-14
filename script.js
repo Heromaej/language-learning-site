@@ -2,15 +2,19 @@ const writeBtn = document.getElementById("writeBtn");
 const uploadBtn = document.getElementById("uploadBtn");
 const mainButtons = document.getElementById("mainButtons");
 const mainTitle = document.getElementById("mainTitle");
-const editorSection = document.getElementById("editorSection");
-const uploadSection = document.getElementById("uploadSection");
 const backArrow = document.getElementById("backArrow");
+
+const editorSection = document.getElementById("editorSection");
+const wordEditor = document.getElementById("wordEditor");
 const continueBtn = document.getElementById("continueBtn");
+
+const uploadSection = document.getElementById("uploadSection");
+const uploadEditor = document.getElementById("uploadEditor");
 const uploadContinueBtn = document.getElementById("uploadContinueBtn");
 const fileInput = document.getElementById("fileInput");
 const fileLabel = document.getElementById("fileLabel");
-const uploadTitle = document.getElementById("uploadTitle");
 
+// WRITE button functionality
 writeBtn.addEventListener("click", () => {
   mainTitle.textContent = "WRITE";
   mainTitle.classList.add("title-move-up");
@@ -19,24 +23,50 @@ writeBtn.addEventListener("click", () => {
   backArrow.classList.remove("hidden");
 });
 
+// UPLOAD button functionality
 uploadBtn.addEventListener("click", () => {
-  mainTitle.textContent = "";
+  mainTitle.textContent = "UPLOAD";
+  mainTitle.classList.add("title-move-up");
   mainButtons.style.display = "none";
   uploadSection.classList.remove("hidden");
   backArrow.classList.remove("hidden");
 });
 
+// BACK arrow functionality
 backArrow.addEventListener("click", () => {
   mainTitle.textContent = "LEARN LANGUAGES";
   mainTitle.classList.remove("title-move-up");
+  mainButtons.style.display = "flex";
   editorSection.classList.add("hidden");
   uploadSection.classList.add("hidden");
-  mainButtons.style.display = "flex";
   backArrow.classList.add("hidden");
+  fileLabel.textContent = "No file chosen";
+  fileInput.value = "";
+  uploadEditor.value = "";
+  wordEditor.value = "";
 });
 
-// Optional: handle selected file display
+// File selection and reading
 fileInput.addEventListener("change", () => {
-  const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No file chosen";
-  fileLabel.textContent = fileName;
+  const file = fileInput.files[0];
+  if (file) {
+    fileLabel.textContent = file.name;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      uploadEditor.value = e.target.result;
+    };
+    reader.readAsText(file);
+  } else {
+    fileLabel.textContent = "No file chosen";
+  }
+});
+
+// CONTINUE button actions (customize as needed)
+continueBtn.addEventListener("click", () => {
+  alert("Continue from WRITE");
+});
+
+uploadContinueBtn.addEventListener("click", () => {
+  alert("Continue from UPLOAD");
 });
