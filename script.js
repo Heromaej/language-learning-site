@@ -9,29 +9,40 @@ const backArrow = document.getElementById("backArrow");
 const continueBtn = document.getElementById("continueBtn");
 
 writeBtn.addEventListener("click", () => {
-  mainTitle.textContent = "WRITE"; // Change title text to "WRITE"
-  mainTitle.classList.add("title-move-up"); // Title animation
-  mainTitle.classList.add("title-bigger"); // Make title bigger
-  mainButtons.style.display = "none"; // Hide main buttons
-  editorSection.classList.remove("hidden"); // Show text editor
-  backArrow.classList.remove("hidden"); // Show back arrow
+  // Change title text and apply animation
+  mainTitle.textContent = "WRITE"; 
+  mainTitle.classList.add("title-move-up");
+  mainTitle.classList.add("title-bigger");
+  
+  // Hide main buttons and show editor section
+  mainButtons.style.display = "none";
+  editorSection.classList.remove("hidden");
+  backArrow.classList.remove("hidden");
 });
 
 uploadBtn.addEventListener("click", () => {
-  mainTitle.textContent = "UPLOAD"; // Change title text to "UPLOAD"
-  mainTitle.classList.add("title-move-up"); // Title animation
-  mainTitle.classList.add("title-bigger"); // Make title bigger
-  mainButtons.style.display = "none"; // Hide main buttons
-  uploadSection.classList.remove("hidden"); // Show upload section
-  backArrow.classList.remove("hidden"); // Show back arrow
+  // Change title text and apply animation
+  mainTitle.textContent = "UPLOAD";
+  mainTitle.classList.add("title-move-up");
+  mainTitle.classList.add("title-bigger");
+  
+  // Hide main buttons and show upload section
+  mainButtons.style.display = "none";
+  uploadSection.classList.remove("hidden");
+  backArrow.classList.remove("hidden");
 });
 
 backArrow.addEventListener("click", () => {
-  mainTitle.textContent = "LEARN LANGUAGES"; // Reset title to "LEARN LANGUAGES"
-  mainTitle.classList.remove("title-move-up"); // Reset title animation
-  mainTitle.classList.remove("title-bigger"); // Reset title size
-  editorSection.classList.add("hidden"); // Hide text editor
-  uploadSection.classList.add("hidden"); // Hide upload section
-  mainButtons.style.display = "flex"; // Show main buttons again
-  backArrow.classList.add("hidden"); // Hide the back arrow
+  // Reset title to "LEARN LANGUAGES"
+  mainTitle.textContent = "LEARN LANGUAGES";
+  mainTitle.classList.remove("title-move-up");
+  mainTitle.classList.remove("title-bigger");
+  
+  // Hide editor and upload sections, show main buttons
+  editorSection.classList.add("hidden");
+  uploadSection.classList.add("hidden");
+  mainButtons.style.display = "flex";
+  
+  // Hide back arrow
+  backArrow.classList.add("hidden");
 });
