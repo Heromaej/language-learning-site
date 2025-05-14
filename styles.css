@@ -11,7 +11,7 @@ body, html {
 
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #6a0dad, #2196f3, #9c27b0);
+  background: linear-gradient(135deg, #6a0dad, #2196f3, #ff69b4);
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   display: flex;
@@ -20,7 +20,6 @@ body, html {
   align-items: center;
   text-align: center;
   color: white;
-  padding: 40px 20px;
 }
 
 h1 {
@@ -33,12 +32,27 @@ h1 {
 }
 
 .title-move-up {
-  transform: translateY(-40px);
-  font-size: 2.2rem;
+  margin-bottom: 20px;
+  transform: translateY(-60px);
+  font-size: 2.5rem;
+}
+
+.title-bigger {
+  font-size: 4rem;  /* Larger font size when clicked */
+  margin-top: 20px;  /* Slightly move the title down */
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
+}
+
+.upload-title {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .buttons button,
-.editor-buttons button {
+.editor-buttons button,
+.upload-section button {
   background: white;
   color: #6a0dad;
   border: none;
@@ -53,7 +67,7 @@ h1 {
 
 .buttons button:hover,
 .editor-buttons button:hover,
-#fileLabel:hover {
+.upload-section button:hover {
   background-color: #e0d4f7;
 }
 
@@ -61,6 +75,7 @@ h1 {
 .upload-section {
   width: 90%;
   max-width: 600px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +90,28 @@ textarea {
   border: none;
   resize: none;
   margin-top: 20px;
-  margin-bottom: 20px;
+}
+
+.language-selector {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.language-selector label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.language-selector select {
+  background-color: white;
+  color: #6a0dad;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 200px;
 }
 
 .hidden {
@@ -105,30 +141,20 @@ textarea {
   opacity: 0.7;
 }
 
-/* Custom file input text block */
-.custom-file-text {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-}
-
-.custom-file-text span {
-  color: white;
-}
-
 #fileInput {
   display: none;
 }
 
 #fileLabel {
-  background: white;
-  color: #6a0dad;
-  padding: 10px 20px;
-  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
   cursor: pointer;
-  margin-left: 8px;
-  transition: background-color 0.3s ease;
 }
 
+#fileLabel:hover {
+  text-decoration: underline;
+}
+
+#fileInput:focus {
+  outline: none;
+}
