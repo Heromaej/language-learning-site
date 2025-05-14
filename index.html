@@ -11,13 +11,12 @@
   <div class="hero">
     <h1 id="mainTitle">LEARN LANGUAGES</h1>
 
-    <!-- Initial Buttons -->
     <div class="buttons" id="mainButtons">
       <button id="writeBtn">WRITE</button>
       <button id="uploadBtn">UPLOAD</button>
     </div>
 
-    <!-- WRITE Section -->
+    <!-- Editor Section for Write -->
     <div class="editor-section hidden" id="editorSection">
       <textarea id="wordEditor" placeholder="Type one word per line...&#10;Example: dog - der Hund"></textarea>
       <div class="editor-buttons">
@@ -25,12 +24,17 @@
       </div>
     </div>
 
-    <!-- UPLOAD Section -->
-    <div class="editor-section hidden" id="uploadSection">
-      <textarea id="uploadEditor" placeholder="Paste content or select a file..."></textarea>
-      <input type="file" id="fileInput" accept=".txt" />
+    <!-- Upload Section -->
+    <div class="upload-section hidden" id="uploadSection">
+      <h1 id="uploadTitle">UPLOAD</h1>
+      <div class="custom-file-text">
+        <span>Choose file: </span>
+        <label for="fileInput" id="fileLabel">No file chosen</label>
+        <input type="file" id="fileInput" />
+      </div>
+      <textarea id="uploadEditor" placeholder="File content will appear here or type manually..."></textarea>
       <div class="editor-buttons">
-        <button id="continueBtnUpload">CONTINUE</button>
+        <button id="uploadContinueBtn">CONTINUE</button>
       </div>
     </div>
   </div>
