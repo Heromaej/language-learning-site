@@ -25,12 +25,17 @@ writeBtn.addEventListener("click", () => {
 
 // UPLOAD button functionality
 uploadBtn.addEventListener("click", () => {
-  mainTitle.textContent = "UPLOAD";
-  mainTitle.classList.add("title-move-up");
-  mainButtons.style.display = "none";
-  uploadSection.classList.remove("hidden");
-  backArrow.classList.remove("hidden");
+  mainTitle.style.display = "none"; // Hide the "LEARN LANGUAGES" title
+  const uploadTitle = document.createElement('h1'); // Create a new title for the upload page
+  uploadTitle.textContent = "UPLOAD";
+  uploadTitle.classList.add("upload-title");
+  document.body.appendChild(uploadTitle); // Append the new title to the body
+  
+  mainButtons.style.display = "none"; // Hide the buttons
+  uploadSection.classList.remove("hidden"); // Show the upload section
+  backArrow.classList.remove("hidden"); // Show the back arrow
 });
+
 
 // BACK arrow functionality
 backArrow.addEventListener("click", () => {
